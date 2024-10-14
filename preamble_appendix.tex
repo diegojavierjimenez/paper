@@ -1,0 +1,37 @@
+%!TEX root = ../paper.tex
+
+\clearpage
+\renewcommand\thefigure{OA-\arabic{figure}}
+\renewcommand\thetable{OA-\arabic{table}}
+\renewcommand*{\thepage}{OA - \arabic{page}}
+\renewcommand\thesection{Appendix \Alph{section}}
+\renewcommand\thesubsection{\Alph{section}.\arabic{subsection}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{page}{1}
+
+\begin{center}
+	{\huge\textbf{Paper Title}}\\[1em]
+	{\huge\textbf{Paper Subtitle}}\\[1em]
+	\large Author 1 and Author 2 \\[1em]
+	\Large Appendix - For Online Publication \\[1em]
+\end{center}
+
+% TABLE OF CONTENTS BUT ONLY FOR THE SECTIONS IN THE APPENDIX
+\renewcommand\cftsecdotsep{\cftdotsep}
+\renewcommand\cftsubsecdotsep{\cftnodots}
+\renewcommand{\cftsecnumwidth}{6em}
+\renewcommand{\cftpnumalign}{r}
+%\renewcommand{\cftsecleader}{\normalfont\cftdotfill{\cftsecdotsep}}
+
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}\hspace{1.8em}}
+
+
+%\renewcommand{\cftsecnumwidth}{6em}
+\etocdepthtag.toc{appendix}
+\etocsettagdepth{main}{none}
+\etocsettagdepth{appendix}{subsection}
+
+\tableofcontents
+\newpage
