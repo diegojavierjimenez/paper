@@ -1,0 +1,42 @@
+% !TeX root = ../paper.tex
+
+Table \ref{tab:sample_table1} is an example of a \LaTeX table using the settings in this template. Note the following:
+
+\begin{enumerate}
+\item The column width is set using \Verb"\begin{tabular}{L{3cm}C{1.1cm} ... }" where one can use \texttt{L}, \texttt{C}, or \texttt{R} followed by the length \Verb"{XXcm}" using any length measure (\Verb"{cm}", \Verb"{in}", \Verb"{ex}",  etc.). 
+\item Alternatively, columns can be defined in the standard way (using \texttt{l}, \texttt{c}, or \texttt{r}).
+\item Column (3) is not shown, but exists. This is done by using \texttt{H} in the column width as shown in the code.
+\item The max width of the table is set by using \Verb"\begin{adjustbox}{width=\textwidth}".
+\item \Verb"\caption{}", which sets the name of the figure in the paper should always precede \Verb"\label{}".
+\end{enumerate}
+
+
+\begin{table}[H]
+\caption{Example Table 1}
+\label{tab:sample_table1}
+\begin{center}
+\begin{adjustbox}{width=\textwidth}
+	\begin{tabular}{L{3cm}C{1.1cm}C{1.1cm}HC{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}}
+\toprule
+            &        2010&        2011&        2012&        2013&        2014&        2015&        2016&        2017&        2018&        2019&        2020\\
+            &         (1)&         (2)&         (3)&         (4)&         (5)&         (6)&         (7)&         (8)&         (9)&         (10)&         (11)\\
+\midrule
+\multicolumn{12}{l}{\textit{Panel A. Data Subset 1}} \bigstrut \\
+$~$Outcome X &       000 &       000&     000&       000&      000&       000 &       000&     000&       000&      000&      000\\
+$~$Outcome Y &       000 &       000&     000&       000&      000&       000 &       000&     000&       000&      000&      000\\
+$~$Outcome Z &       000 &       000&     000&       000&      000&       000 &       000&     000&       000&      000&      000\\
+\midrule
+\multicolumn{12}{l}{\textit{Panel B. Data Subset 2}} \bigstrut \\
+$~$Outcome X &       000 &       000&     000&       000&      000&       000 &       000&     000&       000&      000&      000\\
+$~$Outcome Y &       000 &       000&     000&       000&      000&       000 &       000&     000&       000&      000&      000\\
+$~$Outcome Z &       000 &       000&     000&       000&      000&       000 &       000&     000&       000&      000&      000\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+{\footnotesize\textit{Notes:} This is an example of a LaTeX table.
+\backreference{tab:sample_table1} \par}
+
+\end{table}
+

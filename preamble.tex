@@ -1,0 +1,295 @@
+% !TeX root = paper.tex
+
+%% DOCUMENT ENCODING ===================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+% SILENCE WARNINGS =====================================================
+\usepackage{silence}
+\WarningFilter{biblatex}{Using fall-back BibTeX(8) backend:}
+\WarningFilter{biblatex}{'\mkdatezeros' is deprecated.}
+
+%% BIBLIOGRAPHY ========================================================
+\usepackage{csquotes}
+\usepackage{xpatch}
+\usepackage{natbib}
+
+%% PAGE FORMAT =========================================================
+\usepackage{sectsty} 			
+\sectionfont{\Large}
+\subsectionfont{\large}
+
+\usepackage[verbose]{geometry}
+\geometry{letterpaper}
+\geometry{margin=2.5cm}
+
+\setlength{\parskip}{0.5\baselineskip}	% change line skip after a paragraph finishes
+
+%\usepackage{parskip}
+
+\usepackage{setspace}
+\onehalfspacing
+%\doublespacing
+
+% FOOTNOTES FORMAT =====================================================
+%\usepackage[bottom,hang]{footmisc}
+\usepackage[marginal]{footmisc}
+\setlength{\footnotesep}{0.65\baselineskip}
+\setlength{\footnotemargin}{-1.5ex}
+
+
+%% ADDITIONAL PACKAGES =================================================
+\usepackage{graphicx}
+\graphicspath{{./figures/}} 
+
+\usepackage{array} 
+\usepackage{paralist} 
+\usepackage{verbatim} 
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{soul}
+\usepackage{pdflscape}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[linewidth=1pt]{mdframed}
+\usepackage{xspace}
+\usepackage{tocloft}
+\usepackage{etoc}
+\usepackage{adjustbox}
+\usepackage{anyfontsize}
+\usepackage{ifdraft}
+\usepackage{eucal}
+\usepackage{rotating}
+\usepackage{fancyvrb}
+\usepackage{comment}
+\usepackage{float}
+
+% TODONOTES PACKAGE ====================================================
+\usepackage[obeyFinal, colorinlistoftodos, textsize=small]{todonotes}
+\setuptodonotes{fancyline, color=yellow, inline}
+
+% https://mirror.hmc.edu/ctan/macros/latex/contrib/todonotes/todonotes.pdf
+\newcounter{todoListItems}
+\newcommand{\todoLink}[2][ ]{
+% Increment counter
+\addtocounter{todoListItems}{1}
+\todo[%
+caption={\protect\hypertarget{todo\thetodoListItems}{}Translation},
+#1]
+{
+#2 \hfill
+\hyperlink{todo\thetodoListItems}{$\uparrow$}
+}
+}
+
+\newcommand{\td}{\todoLink}
+
+\newcommand{\forAll}[2]{\td[color=yellow,inline,caption={\thetodoListItems:
+    @All -- #1}]{\textbf{@All} -- #2}}
+\newcommand{\forA}[2]{\td[color=green!40,inline,caption={\thetodoListItems:
+    @A -- #1}]{\textbf{@A} -- #2}}
+\newcommand{\forB}[2]{\td[color=blue!40,inline,caption={\thetodoListItems:
+    @B -- #1}]{\textbf{@B} -- #2}}
+
+
+% CAPTIONS =============================================================
+\usepackage[labelfont=bf,justification=centering, position=top]{caption}
+\usepackage[labelfont=bf, justification=centering, labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
+
+\usepackage{pstricks}
+%\usepackage[multiple]{footmisc}
+\usepackage{etoolbox,xstring,xspace}
+
+% FIXED COLUMN WIDTHS AND A WAY TO HIDE COLUMNS ========================
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+
+% TIKZ PROGRAMMING =====================================================
+\usepackage{tikz}
+\usetikzlibrary{matrix,shapes,arrows,fit,tikzmark}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes.geometric}
+
+%% CHANGE FONTS ========================================================
+\usepackage[looser]{newpxtext} % LOOSER = BETTER WORD SPACE
+\usepackage{textcomp}
+\usepackage[upint]{newpxmath}
+\usepackage{bm}
+
+
+\definecolor{darkred}{rgb}{0.55, 0, 0}
+\definecolor{ash}{RGB}{50,50,50}
+\definecolor{darkred}{rgb}{0.35, 0.0, 0.0}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.5}
+\definecolor{navyblue}{rgb}{0.0, 0.0, 0.8}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.6, 0.24}
+\definecolor{red_tol}{HTML}{D92120}
+\definecolor{blue_tol}{HTML}{404096}
+\definecolor{blugreen_tol}{HTML}{529DB7}
+\setulcolor{darkred}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+\newtheorem{requirement}{Requirement}
+\newtheorem{assumption}{Assumption}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{example}{Example}
+
+%\include{listings-stata}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+
+
+
+
+
+%% HYPERREF SHOULD BE LAST =============================================
+\usepackage{hyperref}
+\hypersetup{
+    pdfstartview={FitH}, % fits the width of the page to the window
+    pdftitle={XXX}, % title
+    pdfauthor={Diego Jimenez Hernandez}, % author
+    colorlinks=true,  % false: boxed links; true: colored links
+    linkcolor=darkblue, % color of internal links (change box color with linkbordercolor)
+    citecolor=darkred, % color of links to bibliography
+    filecolor=magenta, % color of file links
+    urlcolor=darkred, % color of external links
+}
+
+
+
+% PACKAGE FOR TITLE PAGE =====================================
+\usepackage{titling}
+\setlength{\droptitle}{-4em}              % PUSH TITLE UPWARDS
+\pretitle{\begin{center}\huge\textbf}     % MAKE TITLE HIGHE AND BOLD
+\posttitle{\par\end{center}\vskip 0.5em}  % FINISH THE TITLE AND ADD SPACE
+%\renewcommand{\thanksscript}[1]{}        % REMOVE THANKS MARK FROM FOOTNOTE
+%\renewcommand{\makethanksmarkhook}{\fontsize{9}{11}\selectfont}
+
+% BACKREF FOR FIGURES AND TABLES =============================
+\makeatletter
+
+\AtBeginDocument{%
+\let\origref\ref
+\renewcommand*\ref[1]{%
+  \origref{#1}\xlabel{#1}}
+}
+\newrobustcmd*\xlabel[1]{%
+   \ifcsdef{siteref@doc@#1}{}{\csgdef{siteref@doc@#1}{,}}%
+    \@bsphack%
+    \begingroup
+       \csxdef{siteref@doc@#1}{\csuse{siteref@doc@#1},\thepage}%
+         \protected@write\@auxout{}%
+        {\string\SiteRef{siteref@#1}{\csuse{siteref@doc@#1}}}%
+     \endgroup
+     \@esphack%
+}
+
+\newrobustcmd*\SiteRef[2]{\csgdef{#1}{#2}}
+
+\newrobustcmd*\xref[1]{%
+\ifcsundef{siteref@#1}{%
+     \@latex@warning@no@line{Label `#1' not defined}
+     }{%
+    \begingroup
+      \StrGobbleLeft{\csuse{siteref@#1}}{2}[\@tempa]\relax%
+      \def\@tempb{}%
+      \@tempcnta=0\relax%
+      \@tempcntb=\@ne\relax%
+      \def\do##1{\advance\@tempcnta\@ne}%
+      \expandafter\docsvlist\expandafter{\@tempa}%
+       \def\do##1{%
+         \ifnum\@tempcntb=\@tempcnta\relax%
+            \hyperpage{##1}%
+         \else
+            \hyperpage{##1},%
+          \fi%
+          \advance\@tempcntb\@ne
+       }%
+       [\expandafter\docsvlist\expandafter{\@tempa}]\xspace%
+    \endgroup
+   }%
+}
+\makeatother
+
+% USER-WRITTEN COMMAND DEFINITIONS ===========================
+% BACKREFERENCE COMMAND
+\newcommand{\backreference}[1]{%
+\ifoptionfinal
+    {}%
+    { 
+
+    \noindent
+    {\footnotesize\textit{Backreferenced:} 
+     \texttt{\detokenize{#1}} \xref{#1}}}
+
+    \noindent%
+}
+
+% OUTLINE
+\newcommand{\outline}[1]{%
+\begin{tcolorbox}%
+\footnotesize%
+	#1
+\end{tcolorbox}
+}
+
+% RED TEXT
+\newcommand{\redtext}[1]{\textcolor{red}{#1}}
+
+% XXX TO FILL OUT
+\newcommand{\xx}{\textcolor{magenta}{\texttt{<XX>}}}
+
+% TAKEAWAY COMMAND
+\newcommand{\takeaway}[1]{\begin{center}\textit{#1}\end{center}}
+
+
+% SINGLE SPACING IN TABLES AND FIGURES
+\AtBeginEnvironment{table}{\vspace{-0.5\baselineskip}\singlespacing}
+\AtBeginEnvironment{figure}{\vspace{-0.5\baselineskip}\singlespacing}
+
+\AtEndEnvironment{table}{\vspace{-0.5\baselineskip}}
+\AtEndEnvironment{figure}{\vspace{-0.5\baselineskip}}
+
+\usepackage{titlesec}
+%\titleformat{\paragraph}{\normalfont\normalsize\bfseries}{\theparagraph}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{1ex}{1em}
+%\let\oldparagraph=\paragraph
+%\renewcommand\paragraph[1]{\oldparagraph{#1.}}
+
+%\titlespacing\section{0pt}{0.5ex}{0.5ex}
+%\titlespacing\subsection{0pt}{0.5ex}{0.5ex}
+%\titlespacing\subsubsection{0pt}{0.5ex}{0.5ex}
+
+
+% REMOVE HBOX WARNINGS
+\hfuzz=100pt
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+% !TeX root = ../paper.tex
+
+
+The `Paper template' folder contains this document's building blocks for an academic paper. It includes example preambles/formatting/commands and example sections, as well as a sample bibliography and appendix. This document shows how the constituent parts—section .tex files, bib files, and preamble files—can be combined into a paper format. 
+
+Specifically, the folder contains the following files:
+\begin{enumerate}
+\item \Verb"preamble.tex" loads packages and defines settings.
+\item  \Verb"library.bib", which contains citations.
+\item \Verb"commands.tex" defines new commands. 
+\item \Verb"paper.tex", and associated files that \LaTeX creates when compiling the document: an aux file, a log file, an out file, a toc file, a GZ file, and finally, the pdf output we want. This file puts together the different components of the document---compile it to get a PDF of the full paper. Also, refer to this file for settings choices like citation format (currently: Chicago author-date).
+\item Folders for figures and sections.
+\end{enumerate}
+
+The first paragraph after invoking a \Verb"\section{}" command is not indented, but subsequent paragraphs are.
+
+\subsection {Example subsection}
+
+This is an example of a subsection. The purpose of this subsection is to use the \texttt{commands.tex} file, equations, and citations; to do so, we will use a basic math example. Consider the definition of almost sure convergence \citep{durrett2019probability}: a sequence $\left\{X_n\right\}$ converges almost surely to $X$, written $X_n \as X$, if $\P(\omega : \lim_{n \to \infty} X_n = X) = 1$.
+
+One way to write this is:
+\begin{verbatim}
+$X_n \overset{\text{a.s.}}{\longrightarrow} X$ 
+if 
+$\mathbb{P}(\omega : \lim_{n \to \infty} X_n = X) = 1$
+\end{verbatim}
+
+In the \texttt{commands.tex} file, however, we define new commands:
+\begin{verbatim}
+\renewcommand{\P}{\mathbb{P}} 
+\newcommand{\as}{\overset{\text{a.s.}}{\longrightarrow}}
+\end{verbatim}
+and this simplifies the syntax for the definition of almost sure convergence:
+
+\begin{verbatim} $X_n \as X$  if $\P(\omega : (\lim_{n \to \infty} X_n = X) = 1$\end{verbatim}
+
+Use `paragraph' to highlight the start of a new paragraph without defining a new section.
+
+\paragraph{Example highlighted paragraph.}
+
+Paragraphs come in handy when defining multiple variables and highlighting data sources.\footnote{And footnotes come in handy when providing more detail.} By construction, highlighted paragraphs are not indented.\footnote{A second footnote!}

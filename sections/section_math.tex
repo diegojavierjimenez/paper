@@ -1,0 +1,29 @@
+% !TeX root = ../paper.tex
+
+We also define and demonstrate how we use the theorem, lemma, definition, and proof environments. Each of them has its own numbering, but that can be redefined (if needed) in the preamble definitions. 
+
+
+\begin{theorem}[Fermat's Last Theorem]
+For integer $n > 2$, no three positive integers $a, b, c$ exist that satisfy $a^n + b^n = c^n$.
+\end{theorem}
+
+\begin{proof}
+The proof is left to the reader.
+\end{proof}
+
+\begin{lemma}[Fatou's Lemma] Given a measure space $(X, \Sigma, \mu)$, let $\{f_n\}$ be a sequence of functions such that $f_n: X \to [0, \infty]$ is measurable for each $n$. Then,
+$$
+\int_X \bigg(\lim_{n \to \infty} \inf f_n\bigg ) d\mu  \leq \lim_{n \to \infty} \inf \int_X f_n d\mu. 
+$$
+\end{lemma}
+
+\begin{definition}[Topology]
+A topology on a set $X$ is a collection of subsets $\tau$ of $X$ satisfying the following three properties:
+\begin{enumerate}
+\item $\varnothing \in \tau$ and $X \in \tau$.
+\item Closed under finite intersections: If $U_i \in \tau$, $i=1, \ldots, n$, then $U_1 \cap \cdots \cap U_n \in \tau$.
+\item Closed under unions: If $\{U_i\}_{i \in I}$ is a collection of elements of $\tau$, then $\bigcup_{i \in I} U_i \in \tau$. 
+\end{enumerate}
+\end{definition}
+
+

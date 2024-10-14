@@ -1,0 +1,47 @@
+% !TeX root = ../paper.tex
+
+We will look at two types of figure examples: first, where the figure consists of a single image/graph/chart (as in Figure \ref{fig:sample_fig}), and second where the figure consists of multiple subfigures (Figure \ref{fig:sample_subfig}). Some notes:
+
+\begin{enumerate}
+\item \Verb"\caption{}", which sets the name of the figure in the paper should always precede \Verb"\label{}".
+\item \Verb"\includegraphics{}" will look for the figures in the \Verb"\graphicspath{}" in the preamble.
+\end{enumerate}
+
+
+\begin{figure}[bh!tp]
+\caption{An Example Figure}
+\label{fig:sample_fig}
+\vspace{-1em}
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{example-image-golden}
+\end{center}
+
+{\footnotesize\textit{Notes:} This is an example of a figure added to a \LaTeX~document. 
+\backreference{fig:sample_fig} \par}
+
+\end{figure}
+
+
+\begin{figure}[htbp!]
+\caption{An Example Figure with Subfigures}
+\label{fig:sample_subfig}
+\vspace{-1em}
+\begin{center}
+\begin{subfigure}{0.49\textwidth}
+\caption{Subfigure A}
+\centering
+\includegraphics[width=\textwidth]{example-image-golden}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+\caption{Subfigure B}
+\centering
+\includegraphics[width=\textwidth]{example-image-golden}
+
+\end{subfigure}
+\end{center}
+{\footnotesize \textit{Notes:} 
+This is an example of a \LaTeX~figure. 
+Panel (a) displays a large letter A. Panel (b) displays a large letter B.
+ \backreference{fig:sample_subfig}
+\par}
+\end{figure}

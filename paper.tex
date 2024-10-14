@@ -1,0 +1,146 @@
+% !TeX root = paper.tex
+% !TEX output_directory = .textmp
+
+\documentclass[11 pt]{article} 
+
+\input{preamble} % document preamble
+\input{commands} % some numbers defined that are useful throughout the document
+
+% PAPER TITLE =========================================================
+% ALTERNATIVE TITLE:
+
+\title{Paper Title  \\
+	Paper Subtitle%
+\thanks{%
+Author 1 (corresponding author): Position, Institution; \url{name@mail.com}. 
+Author 2: Position, Insitution. \\[1ex]
+\noindent
+Anne Fournier was instrumental to make this template readable. The views expressed herein are those of the authors and do not necessarily reflect the views of Employer. All errors are our own.
+}}
+\author{%
+	\large First Author  \and
+	\large Second Author
+	}
+\date{
+	%\today \\ % If paper is online at http://paper.website.com
+	date \\
+	\small{[\href{http://paper.website.com}{click for latest version}]}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT SETUP
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\etocdepthtag.toc{main}
+\etocsettagdepth{main}{subsection}
+\etocsettagdepth{appendix}{none}
+
+
+\maketitle
+\thispagestyle{empty}
+\vspace{-4ex}
+\begin{abstract}
+
+\input{Sections/template_abstract.tex}
+
+\vspace{4ex}
+\noindent \textbf{JEL: }JEL Code 1; JEL Code 2; JEL Code 3; JEL Code 4. \\
+\noindent \textbf{Keywords:} keyword1; keyword2; keyword3.
+\end{abstract}
+\newpage
+
+\ifoptionfinal
+{}%
+{
+\noindent
+\textbf{Note:} The table of contents automatically disappears if you add \texttt{final} to the \texttt{documentclass}.
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\noindent
+\textbf{Note:} The list of todos automatically disappears if you add \texttt{final} to the \texttt{documentclass}.
+\listoftodos
+\thispagestyle{empty}
+\newpage
+}
+
+
+
+
+\setcounter{page}{1}
+
+
+\section{Introduction}
+\input{sections/section_introduction}
+
+\section{Debugging/Editing Tools}
+\input{sections/section_debugging}
+
+\section{Mathematical Tools}
+\input{sections/section_math}
+
+% REFERENCES ======================================================
+\newpage
+\singlespacing
+\bibliographystyle{chicago}
+\bibliography{library}
+%\printbibliography
+
+\newpage
+\newgeometry{
+	left=1.5cm,
+	right=1.5cm,
+	top=2.5cm,
+	bottom=2.5cm}
+%\newgeometry{margin=1.5cm}
+
+% TABLES ========================================================
+\section*{Tables}
+\input{sections/template_table}
+%
+% FIGURES =======================================================
+\newpage
+\section*{Figures}
+\input{sections/template_figure}
+
+% APPENDIX ======================================================
+\newpage
+\appendix
+\newgeometry{margin=2.5cm}
+\input{preamble_appendix}
+
+\newpage
+\doublespacing
+\newgeometry{
+	left=1.5cm,
+	right=1.5cm,
+	top=2.5cm,
+	bottom=2.5cm}
+
+\section{Exhibits}
+\label{sec_app:ex}
+\backreference{sec_app:ex}%
+Pages in the Appendix are also labeled with an OA- prefix. Similarly, exhibits in the Appendix are labeled with an OA- prefix. When cited, this prefix is automatically added to the name (e.g., Figure \ref{fig:sample_fig_app}).
+
+\begin{figure}[H]
+\caption{An Example Figure in the Appendix}
+\label{fig:sample_fig_app}
+\vspace{-1em}
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{example-image-golden}
+\end{center}
+
+{\footnotesize\textit{Notes:} This is an example of a figure added to a \LaTeX \ document. 
+\backreference{fig:sample_fig_app} \par}
+
+
+
+\end{figure}
+
+
+
+
+\end{document}

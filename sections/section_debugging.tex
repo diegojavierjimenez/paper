@@ -1,0 +1,42 @@
+% !TeX root = ../paper.tex
+
+
+The preamble contains a few editing tools. Here are some of the most important ones. If you want to see the others, check out the preamble. Many of these tools disappear automatically when you add \texttt{final} to the \Verb"\documentclass" (i.e., \Verb"\documentclass[final]{article}").
+
+\subsection{To-do notes}
+Perhaps the command I use the most comes from the \Verb"\todo" command, which I slightly rewrote. I use it to know what else to work on next. For example, I want to remind myself to improve the explanation of the to-do command. What I would do is leave a note like the following:
+\forAll{Finalize explanation of to-do.}{Explain how to change colors, how to create additional authors, etc.}
+
+
+Notice that a hyperlink is created on the "Todo list", and you can go to this list using the up arrow. It is automatically updated once you compile. To create this note, write: 
+\begin{verbatim}
+\forAll{caption}{summary}
+\end{verbatim}
+
+My coauthors also like to use it to leave notes and assign tasks to each other. I defined a couple of new commands (\Verb"\forA" and \Verb"\forB" in the preamble). Imagine we want to make a note so that A knows what to revise:
+
+\forA{Please check that you agree with my explanation above.}{Caption}
+
+Similarly, if instead it was B the one who needed to check something out:
+\forB{Check results}{Check this out.}
+
+\subsection{The \xx~command}
+Another command I typically use is a placeholder \Verb"\xx" as defined in the preamble. Whenever invoked, it transforms into \xx. This command is useful when writing paragraphs that require much detail. It makes it easy to come back and remove when editing. By construction, \Verb"\xx" leaves no space after itself. You can write \Verb"\xx~" if you want space.
+
+
+
+\subsection{The Backreference Command}
+
+The \Verb"\backreference{}" command helps identify where a particular figure, table, or appendix is being cited. For example, citing Table \ref{tab:sample_table1}  and \ref{sec_app:ex} here would mark both of these as cited in this page. To use this command:
+\begin{enumerate}
+\item Define a label for the figure/table below your caption, or below the section definition with the \Verb"\label{}" command (e.g.,  \Verb"\label{fig:sample_fig}").
+\item Invoke the \Verb"\backreference{}" command with the same label (e.g., using the same label as above, \Verb"\backreference{fig:sample_fig}"). You can invoke the command anywhere, but I recommend placing it in the notes section of a figure or a table, or below the section defnition. 
+\end{enumerate}
+
+
+
+
+Note that the command requires you to manually add the correct \Verb"\label{}". This backreference can be invoked anywhere. To use it, write \Verb"\backreference{label}".
+
+
+
